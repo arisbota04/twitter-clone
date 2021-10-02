@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary',
     'posts',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -149,12 +149,11 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
 cloudinary.config(
     cloud_name="dycecj1dc",
     api_key="373434666932725",
-    api_secret="B9cu7pmwhOPklo9S8jrMnsI99zc"
+    api_secret="B9cu7pmwhOPklo9S8jrMnsI99zc",
+    secure=True
 )
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
