@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block content %}
+{% load static %}
+
+<div class="col profile-col-3">
+
+</div>
+
+<div class="col profile-col-6">
+    <section class="content">
+        <section class="post_form">
+            <form action="/" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Name" required class="input_area"><br>
+                <textarea name="body" class="text-area" required></textarea>
+    
+                <div class="mb-0">
+                    <input class="form-control form-control-sm" name="image" type="file">
+                </div>
+                <input type="submit" value="Tweet" class="btn">
+            </form>
+        </section>
+    
+        <section class="posts">
+           <ul class="post">
+                {% for post in posts %}
+                <li class="post-body">
+                    <div class="post-header">
+                        <div class="post-avatar">
+                            <img
+                                src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                                alt=""
+                            />
+                        </div>
+                        <div class="header-part2">
+                            <h3 class="name">
+                                {{ post.name }}
+                            </h3>
+                            <div class="datetime">
+                                  - {{ post.created_at }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post_body">
+                        <p class="body">
+                            {{ post.body }}
+                        </p>
+                        <div class="img">
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="post_footer">
+                        <div class="icon">
+                            <a href="likes/{{ post.id }}/" class="icons" ><i class="far fa-thumbs-up"></i></a> {{post.like_count}}
+                            <a href="/delete/{{ post.id }}/" class="icons"><i class="fas fa-trash-alt"></i></a>
+                            <a href="/edit/{{ post.id }}/" class="icons"><i class="fas fa-edit"></i></a>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+           </ul>
+        </section>
+</div>
+
+<div class="col profile-col-3">
+
+</div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+     crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+</section>
+{% endblock %}

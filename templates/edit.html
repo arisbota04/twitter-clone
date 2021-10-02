@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+{% load static %}
+<section class="content">
+    <section class="post_form">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name" value="{{posts.name}}" class="input_area" required>
+            <textarea class="text-area" name="body" placeholder="tell us anything" value="{{posts.body}}" required></textarea>
+            
+            <input class="form-control form-control-sm" name="image" type="file" value="{{posts.image.url}}">
+            <div class="editfotter">
+                <input type="submit" class="btn" value="Update">
+                <a href="{% url 'index' %}" class="btn">Cancel</a>
+            </div>
+        </form>
+    </section>
+</section>
+{% endblock %}
