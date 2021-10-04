@@ -8,6 +8,13 @@
 <div class="col profile-col-6">
     <section class="content">
         <section class="post_form">
+            <div class="post-avatar">
+                <img
+                    src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+                    alt=""
+                />
+                <a href="#">Home</a>
+            </div>
             <form action="/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <input type="text" name="name" placeholder="Name" required class="input_area"><br>
@@ -26,10 +33,10 @@
                 <li class="post-body">
                     <div class="post-header">
                         <div class="post-avatar">
-                            <img
+                            <a href="#"><img
                                 src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
                                 alt=""
-                            />
+                            /></a>
                         </div>
                         <div class="header-part2">
                             <h3 class="name">
