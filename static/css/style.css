@@ -134,8 +134,8 @@ body {
     font-weight: 500;
 }
 .post_body .img  img{
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 500px;
     background-color: aqua;
 }
 .post_footer {
