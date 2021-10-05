@@ -26,17 +26,16 @@
                 <input type="submit" value="Tweet" class="btn">
             </form>
         </section>
-    
+        {% for post in posts %}
         <section class="posts">
            <ul class="post">
-                {% for post in posts %}
                 <li class="post-body">
-                    <img src="/static/img/dots.jpg" alt="" class="menu_icon js-menu-icon">
-                    <div class="menu">
-                        <a href="/delete/{{ post.id }}">delete</a>
-                        <a href="/edit/{{ post.id }}">edit</a>
-                    </div>
                     <div class="post-header">
+                        <img src="/static/img/dots.jpg" alt="" class="menu_icon js-menu-icon">
+                        <div class="menu">
+                            <a href="/delete/{{ post.id }}">delete</a>
+                            <a href="/edit/{{ post.id }}">edit</a>
+                        </div>
                         <div class="post-avatar">
                             <a href="#"><img
                                 src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
