@@ -168,7 +168,7 @@ body {
 
 
 
-@media (max-width: 540px){
+@media (max-width: 450px){
     .post_form {
         margin-top: 5px;
         border-bottom: 1px solid;
@@ -230,6 +230,9 @@ body {
         background-color: aqua;
         margin-left: -60px;
     }
+    .pos_form .post-avatar img {
+     width:250px;
+        height:250px
 }    
 @media (min-width: 768px){
 }
