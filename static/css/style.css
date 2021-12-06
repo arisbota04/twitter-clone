@@ -230,7 +230,7 @@ body {
         background-color: aqua;
         margin-left: -60px;
     }
-    .post_form .post-avatar img {
+   #img {
      width:250px;
         height:250px
 }    
