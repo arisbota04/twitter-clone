@@ -18,7 +18,7 @@
             <input type="text" name="name" placeholder="Name" value="{{posts.name}}" class="input_area" required>
             <textarea class="text-area" name="body" placeholder="tell us anything" value="{{posts.body}}" required></textarea>
             
-            <img src="{{posts.image.url}}" class="post-image" alt=""><br>
+            <img class="post-image" id="img" src="{{posts.image.url}}" class="post-image" alt=""><br>
 
             <input class="form-control form-control-sm" name="image" type="file" value="{{posts.image.url}}">
             <div class="editfotter">
